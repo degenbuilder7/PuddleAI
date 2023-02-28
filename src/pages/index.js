@@ -119,7 +119,7 @@ export default function Home() {
             ref={btnRef}
             onClick={onOpen}
           >
-            <Image src={"menu.svg"} height={"24px"} width={"24px"} />
+            <Image src={"menu.svg"} height={"24px"} width={"24px"} alt="menu" />
           </Flex>
         </Flex>
 
@@ -140,8 +140,8 @@ export default function Home() {
             </Text>
 
             <Text fontSize={"12px"} fontStyle={"italic"}>
-              by <a href={""}>kamal</a> &{" "} aarav
-              <a href={""}></a> //
+              by kamal & aarav
+              
             </Text>
           </Flex>
 
@@ -187,7 +187,7 @@ export default function Home() {
                 </Button>
               )}
             </Flex>
-<PromptForm />
+            <PromptForm />
             <Flex flexDir={"column"}>
               {minted ? (
                 <Flex gap={"16px"} align={"center"} marginTop={"16px"}>
