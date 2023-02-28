@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap');
+
+
+html {
+  background-color: #00001C;
+  color-scheme: dark;
+  scroll-behavior: smooth;
+
+}
+
+.main {
+  background-color: white;
+  min-height: 100vh;
+}
+
+
+
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: #00001C;
+}
+
+.hover-underline-animation::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #00001C;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
+
+
+
+
+.btn {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.68) 0%, rgba(164, 21, 29, 0.682162) 21.15%, rgba(29, 15, 142, 0.718486) 64.9%, #020202 100%);
+}
+
+input {
+  @apply border;
+  @apply border-solid;
+  @apply border-gray-400;
+  /* @apply rounded-md; */
+  @apply px-4;
+  @apply py-2;
+  color: #2F3150
+}
+
+.border-hairline {
+  @apply border border-black border-opacity-10;
+}
+
+.lil-button {
+  @apply inline-block;
+  /* @apply border-hairline; */
+  @apply text-sm;
+  @apply text-gray-500;
+  @apply rounded-md;
+  @apply py-2;
+  @apply mx-3;
+}
+
+.icon {
+  @apply inline relative mr-1;
+  top: -0.1em;
+  width: 1.1em;
+  height: 1.1em;
+}
