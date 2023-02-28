@@ -2,12 +2,14 @@
 <br>
 Puddle AI is a platform that allows users to generate images using advanced AI algorithms based on the text input. It also provides an easy way for users to mint their unique digital assets on the Flow blockchain. This README file provides a brief overview of the platform's features and how to use them.
 
-Features
+<h2>Features</h2>
+<br>
 Text-to-image generation: Users can input any text and get an image that represents the text's content.
 Advanced AI algorithms: The platform uses state-of-the-art AI algorithms to generate high-quality images.
 Simple interface: The platform has a simple and user-friendly interface that makes it easy for anyone to use.
 Flow blockchain integration: Users can mint their unique digital assets on the Flow blockchain with just a few clicks.
-Getting Started
+<h3>Getting Started</h3>
+<br>
 To use Puddle AI, you need to follow these simple steps:
 
 *Go to the Puddle AI website.
@@ -16,7 +18,8 @@ To use Puddle AI, you need to follow these simple steps:
 *Wait for the platform to generate the image based on your input.
 *If you are satisfied with the image, click the "Mint on Flow" button.
 *Follow the prompts to complete the minting process.
-Technologies Used
+<h4>Technologies Used</h4>
+<br>
 Puddle AI is built using several cutting-edge technologies, including:
 
 React: A popular JavaScript library for building user interfaces.
