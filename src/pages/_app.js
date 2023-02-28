@@ -5,7 +5,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import "@fontsource/syne";
 import { defineStyle, defineStyleConfig, extendTheme } from "@chakra-ui/react";
 import { tooltipTheme } from "components/Tooltip";
-
+import Layout from "components/Layout";
 
 
 
@@ -71,9 +71,9 @@ function MyApp({ Component, pageProps }) {
       </div>
 
       <ChakraProvider theme={theme}>
-
+          <Layout>
             <Component {...pageProps} />
-
+          </Layout>
       </ChakraProvider>
     </>
   );
