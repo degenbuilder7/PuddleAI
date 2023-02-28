@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useDisclosure } from "@chakra-ui/react";
 import Canvas from "components/canvas";
-import { PromptForm } from "components/prompt-form";
+import PromptForm from "components/prompt-form";
 import { useRef } from "react";
 import Marquee from "react-fast-marquee";
 
@@ -103,6 +103,7 @@ export default function Home() {
                 </a>
               </Text>
             </div>
+            
             <div className="hover-underline-animation">
               <Text
                 fontSize={{ base: "11px", lg: "20px" }}
@@ -186,7 +187,7 @@ export default function Home() {
                 </Button>
               )}
             </Flex>
-
+<PromptForm />
             <Flex flexDir={"column"}>
               {minted ? (
                 <Flex gap={"16px"} align={"center"} marginTop={"16px"}>
