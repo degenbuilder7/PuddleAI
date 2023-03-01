@@ -3,6 +3,16 @@
 // @ts-ignore
 import * as fcl from "@onflow/fcl";
 
+
+import { config } from "@onflow/fcl";
+
+config({
+  "accessNode.api": "https://rest-testnet.onflow.org",
+  "discovery.wallet": "https://fcl-discovery.onflow.org/testnet/authn",
+  "app.detail.icon": "https://placekitten.com/g/200/200",
+  "app.detail.title": "Puddle AI"
+})
+
 fcl.authenticate();
 
 // storefront initialised
