@@ -3,6 +3,7 @@ import { FiCamera, FiGlobe, FiPenTool } from "react-icons/fi";
 import {tooltipTheme} from "components/Tooltip"
 import Link from "next/link";
 import { Button } from "@chakra-ui/react";
+import Nft from "components/data";
 
 
 const LandingPage = () => {
@@ -11,8 +12,8 @@ const LandingPage = () => {
     <Box p={8} >
       <Heading as="h1" size="3xl">
         Welcome to Our Platform
-        <Link class="-inset-0"href="/generate">
-          <Button >Generate</Button>
+        <Link href="/generate">
+          <Button ml={350} rounded >Generate</Button>
         </Link>
       </Heading>
       <Grid templateColumns={{ sm: "repeat(1, 1fr)", md: "repeat(3, 1fr)" }} gap={8}>
@@ -51,6 +52,7 @@ const LandingPage = () => {
         </GridItem>
       </Grid>
     </Box>
+    <Nft />
     </>
   );
 };
