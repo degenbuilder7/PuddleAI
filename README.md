@@ -1,4 +1,5 @@
 <h1>Puddle AI </h1>
+<img src="https://cdn.discordapp.com/attachments/1033079854826000484/1080350645787295754/puddleai-low-resolution-logo-black-on-white-background.png"/>
 <br>
 Puddle AI is a platform that allows users to generate images using advanced AI algorithms based on the text input. It also provides an easy way for users to mint their unique digital assets on the Flow blockchain. This README file provides a brief overview of the platform's features and how to use them.
 
