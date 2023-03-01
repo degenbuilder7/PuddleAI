@@ -4,7 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
-
+package-lock.json
 # testing
 /coverage
 
@@ -14,7 +14,7 @@
 
 # production
 /build
-
+.env
 # misc
 .DS_Store
 *.pem

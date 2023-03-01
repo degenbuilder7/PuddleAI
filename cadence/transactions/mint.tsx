@@ -7,8 +7,8 @@ import * as fcl from "@onflow/fcl";
 import { config } from "@onflow/fcl";
 
 config({
-  "accessNode.api": "https://rest-testnet.onflow.org",
-  "discovery.wallet": "https://fcl-discovery.onflow.org/testnet/authn",
+    "accessNode.api": "https://rest-testnet.onflow.org",
+    "discovery.wallet": "https://fcl-discovery.onflow.org/testnet/authn",
   "app.detail.icon": "https://placekitten.com/g/200/200",
   "app.detail.title": "Puddle AI"
 })
@@ -18,19 +18,18 @@ fcl.authenticate();
 // storefront initialised
 
 async function minttopuddle(
-  collectionIdentifier: string,
-  saleItemID: number,
-  saleItemPrice: number,
-  customID: string | undefined,
-  buyer: string | undefined,
-  expiry: number
+    recipient: String,
+    name: String,
+    description: String,
+    thumbnail: String,
+    noToMint: Number,
 ) {
   const txId = await fcl.mutate({
     cadence: `
-        import NonFungibleToken from 0x1d7e57aa55817448
+        import NonFungibleToken from 0x631e88ae7f1d7c20
         import PuddleV1 from 0x9496a99be6bceb8c
-        import MetadataViews from 0x1d7e57aa55817448
-        import FungibleToken from 0xf233dcee88fe0abe
+        import MetadataViews from 0x631e88ae7f1d7c20
+        import FungibleToken from 9a0766d93b6608b7
 
         
         transaction(
@@ -40,10 +39,9 @@ async function minttopuddle(
             thumbnail: String,
             noToMint: Int,
         ) {
-        
+
             let minter: &PuddleV1.NFTMinter
         
-            /// Reference to the receiver''s collection
             let recipientCollectionRef: &{NonFungibleToken.CollectionPublic}
         
             /// Previous NFT ID before the transaction executes
@@ -83,21 +81,20 @@ async function minttopuddle(
         
             post {
                 self.recipientCollectionRef.getIDs().contains(self.mintingIDBefore): "The next NFT ID should have been minted and delivered"
-                PuddleV1.totalSupply == self.mintingIDBefore + UInt64(noToMint): "The total supply should have been increased by  value"
+                PuddleV1.totalSupply == self.mintingIDBefore + UInt64(noToMint): "The total supply should have been increased by value"
             }
         }
     `,
     args: (arg: any, t: any) => [
-      arg(collectionIdentifier, t.String),
-      arg(saleItemID, t.UInt64),
-      arg(saleItemPrice, t.UFix64),
-      arg(customID, t.Optional(t.String)),
-      arg(buyer, t.Optional(t.Address)),
-      arg(expiry, t.UInt64),
+      arg(recipient, t.String),
+      arg(name, t.String),
+      arg(description, t.String),
+      arg(thumbnail, t.String),
+      arg(noToMint, t.Int),
     ],
     // proposer : fcl.proposer,
     // payer: fcl.currentUser,
-    limit: 999
+    limit: 9999
   });
 
   const txn = await fcl.tx(txId).onceSealed();
