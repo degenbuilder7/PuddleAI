@@ -9,8 +9,8 @@ import { config } from "@onflow/fcl";
 config({
     "accessNode.api": "https://rest-testnet.onflow.org",
     "discovery.wallet": "https://fcl-discovery.onflow.org/testnet/authn",
-  "app.detail.icon": "https://placekitten.com/g/200/200",
-  "app.detail.title": "Puddle AI"
+    "app.detail.icon": "https://camo.githubusercontent.com/5b01555a0a265f26f5d42f9fe0bf339a4883777117f6ed4fa0fdf38a40c6cba6/68747470733a2f2f63646e2e646973636f72646170702e636f6d2f6174746163686d656e74732f313033333037393835343832363030303438342f313038303335303634353738373239353735342f707564646c6561692d6c6f772d7265736f6c7574696f6e2d6c6f676f2d626c61636b2d6f6e2d77686974652d6261636b67726f756e642e706e67",
+    "app.detail.title": "Puddle AI"
 })
 
 fcl.authenticate();
@@ -26,10 +26,10 @@ async function minttopuddle(
 ) {
   const txId = await fcl.mutate({
     cadence: `
-        import NonFungibleToken from 0x631e88ae7f1d7c20
+        import NonFungibleToken from 0x1d7e57aa55817448
         import PuddleV1 from 0x9496a99be6bceb8c
-        import MetadataViews from 0x631e88ae7f1d7c20
-        import FungibleToken from 9a0766d93b6608b7
+        import MetadataViews from 0x1d7e57aa55817448
+        import FungibleToken from 0xf233dcee88fe0abe
 
         
         transaction(
