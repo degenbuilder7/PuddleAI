@@ -8,7 +8,7 @@ const handleMint =()=>{
 export default function ImageForm() {
   const [prompt, setPrompt] = useState('');
 
-  const apiKey = ""
+  const apiKey = "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"
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
